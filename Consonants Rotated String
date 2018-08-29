@@ -1,0 +1,58 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+        //Your Code Here
+    Scanner sc=new Scanner(System.in);
+    String str=sc.next();
+    int n=sc.nextInt();
+    int k=0;
+    char ch[]=str.toCharArray();
+    int a[]=new int[ch.length];
+    String res="";
+    for(int i=0;i<ch.length;i++)
+    {
+        if(ch[i]!='a'&&ch[i]!='e'&&ch[i]!='i'&&ch[i]!='o'&&ch[i]!='u')
+        {
+            res+=ch[i];
+            a[k++]=i;
+        }
+    }
+        int y=res.length();
+    n=n%y;
+    char ch1[]=res.toCharArray();
+    String str1="";
+    for(int i=n;i<ch1.length;i++)
+    {
+        str1+=ch1[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        str1+=ch1[i];
+    }
+    char ch2[]=str1.toCharArray();
+    int t=0,s=0;
+    for(int i=0;i<ch2.length;i++)
+    {
+        ch[a[t++]]=ch2[s++];
+    }
+    for(int i=0;i<ch.length;i++)
+    {
+        System.out.print(ch[i]);
+    }
+    
+    }
+}
+
+INPUT:
+aabaajaaks
+2
+OUTPUT:
+aakaasaabj
+
+INPUT:
+helloworld
+5
+
+OUTPUT:
+ledhololwr
